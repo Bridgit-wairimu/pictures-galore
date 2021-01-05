@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Image
+from .models import Image,Category,Location
 
 # Create your views here.
 def welcome(request):
@@ -25,6 +25,8 @@ def search_image(request):
 
         return render(request, 'search.html',{'title':title,'images': found_results, 'message': message, 'categories': categories, "locations":locations})
     else:
+                
+        message = 'No searches yet'
         return render(request, 'search.html',{"message": message})
 
 
