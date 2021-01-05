@@ -1,0 +1,35 @@
+
+div.container.navigation{
+    height: 62px;
+}
+
+.header{
+    background-image:url(/static/image/image-one.jpg);
+    padding-top:2%;
+    background-repeat:no-repeat;
+    position: relative;
+    background-size:cover;
+    height: 300px;
+
+}
+
+small{
+    font-weight: 600;
+    font-size: small;
+}
+
+h2{
+    font-size: 30px;
+    line-height: 1;
+    margin: 0 auto;
+    font-family: 'Yesteryear', cursive, serif;
+    color: blue;
+}
+
+body{
+    background-color: honeydew;
+}
+
+.card{
+    width: 100%;
+}

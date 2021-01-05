@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static%}
+
+{% block content %}
+
+{{block.super}}
+
+<!-- Landing Page -->
+<div class="  banner text-center">
+    <div class="header">
+        <div class="container image">
+            <h2 id="category">Every picture tells a story</h2>
+     <br>
+    <small>Trending searches: Fashion,Culture,Travel</small>
+              </form>
+      <p>Photography takes an instance out of time, altering life by holding it still </p>
+            <a href="#photos">View my photos</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="card-columns">
+    {% for image in images %}
+    <div class="card" data-toggle="modal" data-target="#{{image.id}}" >
+        <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img" width="250px" height="150px">
+    </div>
+    
+    <div class="overlay">
+        <h4>{{image.name}}</h4>
+    </div>
+{% endfor %}
+
+{% endblock %}
