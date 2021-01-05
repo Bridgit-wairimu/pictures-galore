@@ -30,6 +30,12 @@ body{
     background-color: honeydew;
 }
 
+h4{
+    font-family: 'Architects Daughter', cursive;
+    font-size: small;
+    color: black;
+}
+
 .card{
     width: 100%;
 }
