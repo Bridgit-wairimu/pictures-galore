@@ -36,6 +36,23 @@ h4{
     color: black;
 }
 
-.card{
-    width: 100%;
+img{
+    margin-top: 20px;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+    margin: 6px 0;
+    cursor: pointer;
 }
+  
+  @media only screen and (max-width: 500px){
+    .img {
+      width: 100%;
+    }
+  }
+
