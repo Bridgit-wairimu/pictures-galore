@@ -1,6 +1,5 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 from .models import Image,Category,Location
-from django.http  import HttpResponse, Http404
 
 # Create your views here.
 def welcome(request):
@@ -32,14 +31,17 @@ def search_image(request):
         return render(request, 'search.html',{"message": message})
 
 
-def single(request,category_name,image_id):
-    title = 'Image'
-    locations = Location.objects.all()
-    image_category = Image.objects.filter(image_category_name = category_name)
-    try:
-        image = Image.objects.get(id= image_id)
-    except DoesNotExist:
-        raise Http404()
-    
-    return render(request,"single.html",{'title':title,"image":image, "locations":locations, "image_category":image_category})
-    
+
+# def location_filter(request, image_location):
+#     location = Location.get_location_id(image_location)
+#     images = Image.filter_by_location(image_location)
+#     title = f'{location} Photos'
+#     return render(request, 'location.html', {'title':title,'images':images,'location':location})
+
+
+def image_location(request, location):
+    images = Image.filter_by_location(location)
+    print(images)
+    return render(request, 'pictures/location.html', {'location_images': images})
+
+
