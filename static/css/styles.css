@@ -1,8 +1,4 @@
 
-div.container.navigation{
-    height: 62px;
-}
-
 .header{
     background-image: url(/static/image/image-one.jpg);
     padding-top:2%;
@@ -30,10 +26,11 @@ body{
     background-color: honeydew;
 }
 
-h4{
-    font-family: 'Architects Daughter', cursive;
-    font-size: small;
-    color: black;
+h3{
+    font-family: 'Yesteryear', cursive, serif;
+    font-size: x-large;
+    color: white;
+    font-weight: 600;
 }
 
 img{
@@ -50,15 +47,17 @@ img{
     cursor: pointer;
 }
   
-  @media only screen and (max-width: 500px){
+  @media only screen and (max-width: 700px){
     img {
-      width: 100%;
+      width: 80%px;
+      height: 80px;
     }
   }
 
 p{
     font-size: large;
-    font-weight: 400;
+    font-weight: 600;
     color: black;
+    font-family: 'Architects Daughter', cursive;
 }
 
