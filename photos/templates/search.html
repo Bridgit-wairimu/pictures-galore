@@ -1,14 +1,17 @@
 {%extends 'base.html'%}
 {% load static%}
+{% load bootstrap3 %}
 {% block content %}
+
 
 {{block.super}}
 
 <!-- Landing Page -->
+<body>
 <div class="banner-1">
     <div class="cover-1">
         {% if images%}
-        <h2>Found {{ images|length}} images for searched term {{message}}</h2>
+        <h2 id=text>Found {{ images|length}} images for searched term {{message}}</h2>
         {% else %}
         <h2>Found 0 images for the search term {{message}}</h2>
         {% endif %}
@@ -63,5 +66,5 @@
     </div>
 </div>
 
-    
+</body>    
 {% endblock %}

@@ -14,6 +14,7 @@
   {% block styles %}
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
     {% endblock %}
 
 </head>
@@ -27,14 +28,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
       <script>
+    
     copyLink =(element) => {
-     document.getElementById(element).select();
-     document.execCommand("copy");
+    document.getElementById(element).select();
+    document.execCommand("copy");
         }
     </script>
         
         {% bootstrap_javascript %}
-        <!-- <script src="{% static 'js/scripts.js' %}"></script> -->
         {% endblock %}
 </body>
 </html>

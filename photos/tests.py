@@ -4,13 +4,13 @@ from .models import Image, Category, Location
 # Create your tests here.
 class TestImage(TestCase):
     def setUp(self):
-        self.location = Location(name='Kenyatta')
+        self.location = Location(name='India')
         self.location.save_location()
 
         self.category = Category(name='home')
         self.category.save_category()
 
-        self.image_test = Image(id=1, name='image', description='this is a test image', location=self.location,
+        self.image_test = Image(id=1, name='image', description='image test', location=self.location,
                                 category=self.category)
 
     def test_instance(self):
@@ -39,7 +39,7 @@ class TestImage(TestCase):
 
     def test_search_image_by_location(self):
         self.image_test.save_image()
-        found_images = self.image_test.filter_by_location(location='moringa')
+        found_images = self.image_test.filter_by_location(location='india')
         self.assertTrue(len(found_images) < 1)
 
     
@@ -48,6 +48,24 @@ class TestImage(TestCase):
         found_img = self.image_test.search_by_category(category)
         self.assertTrue(len(found_img) < 1)
 
+
+class CategoryTestClass(TestCase):
+    def setUp(self):
+        self.category = Category(name='home')
+        self.category.save_category()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.category, Category))
+
+    def test_save_category(self):
+        self.category.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) > 0)
+
+    def test_delete_category(self):
+        self.category.delete_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) == 0)
 
 
 class TestLocation(TestCase):
@@ -76,20 +94,3 @@ class TestLocation(TestCase):
         self.assertTrue(len(location) == 0)
 
 
-class CategoryTestClass(TestCase):
-    def setUp(self):
-        self.category = Category(name='home')
-        self.category.save_category()
-
-    def test_instance(self):
-        self.assertTrue(isinstance(self.category, Category))
-
-    def test_save_category(self):
-        self.category.save_category()
-        categories = Category.objects.all()
-        self.assertTrue(len(categories) > 0)
-
-    def test_delete_category(self):
-        self.category.delete_category()
-        category = Category.objects.all()
-        self.assertTrue(len(category) == 0)

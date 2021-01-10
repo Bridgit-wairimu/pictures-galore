@@ -22,8 +22,11 @@ h2{
     color: blue;
 }
 
-body{
-    background-color: honeydew;
+#bodyimage{
+    background-image: url(/static/image/calm.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 h3{

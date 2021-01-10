@@ -1,0 +1,13 @@
+body{
+    background-image: url(/static/image/calm.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+small{
+    color: white;
+}
+
+#text{
+    color: white;
+}

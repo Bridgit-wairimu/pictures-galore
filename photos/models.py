@@ -1,6 +1,6 @@
 from django.db import models
 import datetime as dt
-
+from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -46,12 +46,13 @@ class Location(models.Model):
 class Image(models.Model):
     image = models.ImageField(blank=True, null=True,upload_to='images/')
     name = models.CharField(max_length=60)
-    description = models.TextField()
     author = models.CharField(max_length=40, default='admin')
     date = models.DateTimeField(auto_now_add=True)
+    description = models.TextField()
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
-
+    image = CloudinaryField('images')
+    
     @classmethod
     def filter_by_location(cls, location):
         image_location = Image.objects.filter(location__name=location).all()
