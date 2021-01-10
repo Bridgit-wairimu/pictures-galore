@@ -31,13 +31,11 @@ def search_image(request):
         return render(request, 'search.html',{"message": message})
 
 
-
 # def location_filter(request, image_location):
 #     location = Location.get_location_id(image_location)
 #     images = Image.filter_by_location(image_location)
 #     title = f'{location} Photos'
 #     return render(request, 'location.html', {'title':title,'images':images,'location':location})
-
 
 def image_location(request, location):
     images = Image.filter_by_location(location)

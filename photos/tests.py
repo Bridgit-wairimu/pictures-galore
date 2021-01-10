@@ -67,7 +67,6 @@ class CategoryTestClass(TestCase):
         category = Category.objects.all()
         self.assertTrue(len(category) == 0)
 
-
 class TestLocation(TestCase):
     def setUp(self):
         self.location = Location(name='Kenya')
