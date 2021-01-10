@@ -15,30 +15,31 @@
 #### View photos based on the location they were taken.
 
 # Set up or Installation
-#### git clone
+
+## git clone
 #### https://github.com/Bridgit-wairimu/pictures-galore.git
 
-#### cd picture-globe
+## cd picture-globe
 
-#### install and activate the environment
+## install and activate the environment
 #### ie python -m venv virtual 
 
-#### Install django to your project
+## Install django to your project
 #### ie pip install django
 
-#### Create your app and project file in your environment
+## Create your app and project file in your environment
 
 #### ie (virtual)$ django-admin startproject heyapp( the project)
 
 #### ie (virtual)$ django-admin startapp news( the app)
 
 
-#### Update your file
+## Update your file
 
-#### Run the application
+## Run the application
 #### python manage.py runserver
 
-#### Technologies Used
+# Technologies Used
 
 #### python3.6
 #### Django 1.11
