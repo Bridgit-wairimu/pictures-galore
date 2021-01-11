@@ -85,8 +85,6 @@ class TestLocation(TestCase):
         locations = Location.get_locations()
         self.assertTrue(len(locations) > 0)
 
-    
-
     def test_delete_location(self):
         self.location.delete_location()
         location = Location.objects.all()
